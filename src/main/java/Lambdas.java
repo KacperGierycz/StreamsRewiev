@@ -13,6 +13,20 @@ public class Lambdas {
         int comparision = stringComparator.compare("Hi","Hello");
         System.out.println(comparision);
 
+        Comparator<String> stringComparatorLambda=
+                ( o1, o2) ->  o1.compareTo(o2);
+
+        int lambdaComparison=stringComparatorLambda.compare("Hi","Hello");
+        System.out.println(lambdaComparison);
+
+        Myfunction myfunction= (text1, text2) -> {
+            System.out.println(text1 + " " + text2);
+            return text1 + " " + text2;
+        };
+
+        myfunction.apply("Hello lambda with 1 param"," HI again second parameter");
+        String lambdaWithReturnStatement= myfunction.apply("HI1","Hi2");
+        System.out.println(lambdaWithReturnStatement);
 
     }
 
